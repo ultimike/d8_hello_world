@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @file
+ * Contains \Drupal\hello_world\Controller\HelloController.
+ */
+
 namespace Drupal\hello_world\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
@@ -10,17 +15,16 @@ use Drupal\Core\Controller\ControllerBase;
  * @package Drupal\hello_world\Controller
  */
 class HelloController extends ControllerBase {
-
   /**
    * Hello.
    *
    * @return string
    *   Return Hello string.
    */
-  public function hello($name) {
+  public function hello() {
     return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Hello ' . $name . '!'),
+        '#type' => 'markup',
+        '#markup' => $this->t('Implement method: hello')
     ];
   }
 

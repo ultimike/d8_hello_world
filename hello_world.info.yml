@@ -1,5 +1,5 @@
 name: Hello World
 type: module
-description: Example hello world module
+description: My Hello, World! module.
 core: 8.x
-package: DrupalEasy
+package: Custom
