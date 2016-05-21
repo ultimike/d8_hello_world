@@ -12,11 +12,11 @@ class HelloController extends ControllerBase {
   /**
    * Builds the response.
    */
-  public function build() {
+  public function build($name) {
 
     $build['content'] = [
       '#type' => 'item',
-      '#markup' => $this->t('It works!'),
+      '#markup' => $this->t('Hello ' . $name . '!'),
     ];
 
     return $build;
