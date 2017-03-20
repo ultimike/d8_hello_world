@@ -1,5 +1,5 @@
-name: Hello World
+name: Hello world
 type: module
-description: My Hello, World! module.
+description: My Hello, World module.
 core: 8.x
 package: Custom
