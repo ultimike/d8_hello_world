@@ -1,6 +1,6 @@
-name: Hello, world
+name: 'Hello, world'
 type: module
-description: My Hello, world module.
+description: 'My Hello, World! module.'
 package: DrupalEasy
 core: 8.x
 core_version_requirement: ^8 || ^9

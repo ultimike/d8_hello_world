@@ -16,7 +16,7 @@ class HelloController extends ControllerBase {
 
     $build['content'] = [
       '#type' => 'item',
-      '#markup' => $this->t('Hello @name!', array('@name' => $name)),
+      '#markup' => $this->t('Hello @name!', ['@name' => $name]),
     ];
 
     return $build;
