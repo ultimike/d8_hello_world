@@ -5,23 +5,21 @@ namespace Drupal\hello_world\Controller;
 use Drupal\Core\Controller\ControllerBase;
 
 /**
- * Class HelloController.
- *
- * @package Drupal\hello_world\Controller
+ * Returns responses for Hello, world routes.
  */
 class HelloController extends ControllerBase {
 
   /**
-   * Hello.
-   *
-   * @return string
-   *   Return Hello string.
+   * Builds the response.
    */
-  public function hello() {
-    return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Implement method: hello')
+  public function build() {
+
+    $build['content'] = [
+      '#type' => 'item',
+      '#markup' => $this->t('It works!'),
     ];
+
+    return $build;
   }
 
 }
