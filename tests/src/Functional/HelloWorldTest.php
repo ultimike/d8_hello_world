@@ -24,21 +24,21 @@ class HelloWorldTest extends BrowserTestBase {
   protected static $modules = [
     'hello_world',
   ];
-  
+
   /**
    * A test user.
    *
    * @var \Drupal\user\UserInterface
    */
   protected $testUser;
-  
+
   /**
    * {@inheritdoc}
    */
   protected function setUp(): void {
     parent::setUp();
   }
-  
+
   /**
    * Tests that the Hello World page works.
    */
@@ -54,6 +54,13 @@ class HelloWorldTest extends BrowserTestBase {
 
     // Test that the page title is correct.
     $this->assertSession()->pageTextContains('Hello, world!');
+
+    // Test that the "name" arguement works.
+    $this->drupalGet('/hello-world/mike');
+    $this->assertSession()->statusCodeEquals(200);
+
+    // Test that the page title is correct.
+    $this->assertSession()->pageTextContains('Hello mike!');
   }
 
 }
