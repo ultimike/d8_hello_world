@@ -1,18 +1,18 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Drupal\hello_world\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 
 /**
- * Returns responses for Hello, world routes.
+ * Returns responses for Hello, World routes.
  */
-class HelloController extends ControllerBase {
+final class HelloController extends ControllerBase {
 
   /**
    * Builds the response.
    */
-  public function build() {
+  public function __invoke(): array {
 
     $build['content'] = [
       '#type' => 'item',
