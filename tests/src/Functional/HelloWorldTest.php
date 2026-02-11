@@ -3,6 +3,8 @@
 namespace Drupal\Tests\hello_world\Functional;
 
 use Drupal\Tests\BrowserTestBase;
+use Drupal\user\UserInterface;
+use PHPUnit\Framework\Attributes\Test;
 
 /**
  * Tests that the HelloWorld page is reachable.
@@ -28,7 +30,7 @@ class HelloWorldTest extends BrowserTestBase {
    *
    * @var \Drupal\user\UserInterface
    */
-  protected $testUser;
+  protected UserInterface $testUser;
 
   /**
    * {@inheritdoc}
@@ -40,7 +42,8 @@ class HelloWorldTest extends BrowserTestBase {
   /**
    * Tests that the Hello World page works.
    */
-  public function testHelloWorldPage() {
+  #[Test]
+  public function testHelloWorldPage(): void {
     // Create and log in an administrative user.
     $this->testUser = $this->drupalCreateUser([
       'access content',
@@ -53,12 +56,12 @@ class HelloWorldTest extends BrowserTestBase {
     // Test that the page title is correct.
     $this->assertSession()->pageTextContains('Hello, world!');
 
-    // Test that the "name" arguement works.
+    // Test that the "name" argument works.
     $this->drupalGet('/hello-world/mike');
     $this->assertSession()->statusCodeEquals(200);
 
     // Test that the page title is correct.
-    $this->assertSession()->pageTextContains('Hello mike!');
+    $this->assertSession()->pageTextContains('Hello, mike!');
   }
 
 }
